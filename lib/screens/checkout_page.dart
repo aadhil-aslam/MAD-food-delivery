@@ -137,6 +137,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
         .collection("Orders")
         .add({
       "total": total,
+      "Date": Timestamp.now(),
       "orderDate": Date,
       "Address": address,
       "status": "Order Placed",
@@ -155,6 +156,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
     //DocumentReference orderColRef =
     await _firebaseServices.orderRef.doc(docId).set({
       "total": total,
+      "Date": Timestamp.now(),
       "orderDate": Date,
       "name": name,
       "customerId": _firebaseServices.getUserId(),

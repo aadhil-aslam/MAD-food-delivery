@@ -32,7 +32,9 @@ class _OrdersListState extends State<OrdersList> {
       body: Stack(
         children: [
           FutureBuilder<QuerySnapshot>(
-              future: _firebaseServices.userOrderRef.orderBy("orderDate", descending: true).get(),
+              future: _firebaseServices.userOrderRef
+                  .orderBy("Date", descending: true)
+                  .get(),
               builder: (context, snapshot) {
                 if (snapshot.hasError) {
                   Scaffold(

@@ -66,7 +66,7 @@ class _AdminOrdersState extends State<AdminOrders> {
         children: [
           FutureBuilder<QuerySnapshot>(
               future: _firebaseServices.orderRef
-                  .orderBy("orderDate", descending: true)
+                  .orderBy("Date", descending: true)
                   .get(),
               builder: (context, snapshot) {
                 if (snapshot.hasError) {

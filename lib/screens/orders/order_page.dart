@@ -40,7 +40,7 @@ class _OrderPageState extends State<OrderPage> {
                         decoration: BoxDecoration(
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(8.0)),
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios_new,
                           color: Colors.white,
                           size: 18,
@@ -62,12 +62,12 @@ class _OrderPageState extends State<OrderPage> {
                         // Collection data ready to display
                         if (snapshot.connectionState == ConnectionState.done) {
                           return Text("${snapshot.data!['orderDate']}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 16.0,
                                   color: Colors.black,
                                   fontWeight: FontWeight.w600));
                         }
-                        return CircularProgressIndicator();
+                        return const CircularProgressIndicator();
                       }),
                 ]),
           ),
@@ -113,8 +113,8 @@ class _OrderPageState extends State<OrderPage> {
                                     decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         color: Colors.grey.shade300),
-                                    child: Padding(
-                                        padding: const EdgeInsets.symmetric(
+                                    child: const Padding(
+                                        padding: EdgeInsets.symmetric(
                                             horizontal: 15.0, vertical: 5),
                                         child: Text("Order Placed",
                                             //"${snapshot.data!['status']}",
@@ -134,8 +134,8 @@ class _OrderPageState extends State<OrderPage> {
                                             borderRadius:
                                                 BorderRadius.circular(20),
                                             color: Colors.red),
-                                        child: Padding(
-                                            padding: const EdgeInsets.symmetric(
+                                        child: const Padding(
+                                            padding: EdgeInsets.symmetric(
                                                 horizontal: 15.0, vertical: 5),
                                             child: Text("Cancelled",
                                                 //"${snapshot.data!['status']}",
@@ -146,7 +146,7 @@ class _OrderPageState extends State<OrderPage> {
                                                 ))),
                                       ),
                                     )
-                                  : SizedBox(
+                                  : const SizedBox(
                                       height: 20,
                                     ),
                           accepted || delivered
@@ -189,9 +189,9 @@ class _OrderPageState extends State<OrderPage> {
                                               borderRadius:
                                                   BorderRadius.circular(20),
                                               color: Colors.green.shade600),
-                                          child: Padding(
+                                          child: const Padding(
                                               padding:
-                                                  const EdgeInsets.symmetric(
+                                                  EdgeInsets.symmetric(
                                                       horizontal: 15.0,
                                                       vertical: 5),
                                               child: Text("Accepted",
@@ -205,7 +205,7 @@ class _OrderPageState extends State<OrderPage> {
                                     ],
                                   ),
                                 )
-                              : SizedBox(
+                              : const SizedBox(
                                   height: 20,
                                 ),
                           delivered
@@ -248,9 +248,9 @@ class _OrderPageState extends State<OrderPage> {
                                               borderRadius:
                                                   BorderRadius.circular(20),
                                               color: Colors.green.shade700),
-                                          child: Padding(
+                                          child: const Padding(
                                               padding:
-                                                  const EdgeInsets.symmetric(
+                                                  EdgeInsets.symmetric(
                                                       horizontal: 15.0,
                                                       vertical: 5),
                                               child: Text("Delivered",
@@ -264,14 +264,14 @@ class _OrderPageState extends State<OrderPage> {
                                     ],
                                   ),
                                 )
-                              : SizedBox(
+                              : const SizedBox(
                                   height: 20,
                                 ),
                         ],
                       ),
                     );
                   }
-                  return CircularProgressIndicator();
+                  return const CircularProgressIndicator();
                 }),
           ),
           Expanded(
@@ -296,7 +296,7 @@ class _OrderPageState extends State<OrderPage> {
                       children: [
                         Expanded(
                           child: ListView(
-                            padding: EdgeInsets.only(top: 1.0, bottom: 12.0),
+                            padding: const EdgeInsets.only(top: 1.0, bottom: 12.0),
                             children: snapshot.data!.docs.map((document) {
                               Map<String, dynamic> data =
                                   document.data()! as Map<String, dynamic>;
@@ -319,16 +319,12 @@ class _OrderPageState extends State<OrderPage> {
                                           ),
                                         )),
                                     title: Text(data!['name'],
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                           fontSize: 16.0,
                                           fontWeight: FontWeight.w600,
                                           color: Colors.black,
                                         )),
                                     trailing: Text(data!['size']),
-                                    // trailing: Text('$priceFinal',
-                                    //     style: TextStyle(
-                                    //       fontWeight: FontWeight.w500,
-                                    //     )),
                                   ));
                             }).toList(),
                           ),
@@ -358,8 +354,8 @@ class _OrderPageState extends State<OrderPage> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
+                                        const Padding(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: 10.0),
                                           child: Divider(
                                             color: Colors.black38,
@@ -367,26 +363,26 @@ class _OrderPageState extends State<OrderPage> {
                                         ),
                                         Row(
                                           children: [
-                                            Icon(Icons.calendar_month),
+                                            const Icon(Icons.article_outlined),
                                             const SizedBox(
                                               width: 10,
                                             ),
-                                            Text(
-                                              "Date : ",
+                                            const Text(
+                                              "Order ID : ",
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.w600,
                                                   fontSize: 14.0),
                                             ),
                                             Text(
-                                                "${snapshot.data!['orderDate']}",
-                                                style: TextStyle(
+                                                widget.productId,
+                                                style: const TextStyle(
                                                     fontSize: 14.0,
                                                     color: Colors.black)),
                                           ],
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
+                                        const Padding(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: 10.0),
                                           child: Divider(
                                             color: Colors.black38,
@@ -398,7 +394,7 @@ class _OrderPageState extends State<OrderPage> {
                                             const SizedBox(
                                               width: 10,
                                             ),
-                                            Text(
+                                            const Text(
                                               "Total : ",
                                               style: TextStyle(
                                                   fontSize: 14.0,
@@ -407,13 +403,13 @@ class _OrderPageState extends State<OrderPage> {
                                             ),
                                             Text(
                                                 "LKR ${snapshot.data!['total']}",
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 14.0,
                                                     color: Colors.black)),
                                           ],
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
+                                        const Padding(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: 10.0),
                                           child: Divider(
                                             color: Colors.black38,
@@ -429,7 +425,7 @@ class _OrderPageState extends State<OrderPage> {
                                             const SizedBox(
                                               width: 10,
                                             ),
-                                            Text(
+                                            const Text(
                                               "Payment : ",
                                               style: TextStyle(
                                                   fontSize: 14.0,
@@ -437,22 +433,22 @@ class _OrderPageState extends State<OrderPage> {
                                                   color: Colors.black),
                                             ),
                                             Text("${snapshot.data!['payment']}",
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 14.0,
                                                     color: Colors.black)),
                                           ],
                                         ),
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
+                                        const Padding(
+                                          padding: EdgeInsets.symmetric(
                                               vertical: 10.0),
                                           child: Divider(
                                             color: Colors.black38,
                                           ),
                                         ),
                                         Row(
-                                          children: [
+                                          children: const [
                                             Icon(Icons.home_outlined),
-                                            const SizedBox(
+                                            SizedBox(
                                               width: 10,
                                             ),
                                             Text(
@@ -472,35 +468,16 @@ class _OrderPageState extends State<OrderPage> {
                                             scrollDirection: Axis.horizontal,
                                             child: Text(
                                                 "${snapshot.data!['Address']}",
-                                                style: TextStyle(
+                                                style: const TextStyle(
                                                     fontSize: 14.0,
                                                     color: Colors.black)),
                                           ),
                                         ),
-
-                                        // Row(
-                                        //   mainAxisAlignment:
-                                        //       MainAxisAlignment.spaceBetween,
-                                        //   children: [
-                                        //     Expanded(
-                                        //         child: Text(
-                                        //       "Order Status :",
-                                        //       style: TextStyle(
-                                        //           fontSize: 16.0,
-                                        //           fontWeight: FontWeight.w600,
-                                        //           color: Colors.black),
-                                        //     )),
-                                        //     Text("${snapshot.data!['status']}",
-                                        //         style: TextStyle(
-                                        //             fontSize: 16.0,
-                                        //             color: Colors.black)),
-                                        //   ],
-                                        // ),
                                       ],
                                     ),
                                   );
                                 }
-                                return Scaffold(
+                                return const Scaffold(
                                   body: Center(
                                       child: CircularProgressIndicator()),
                                 );
@@ -511,7 +488,7 @@ class _OrderPageState extends State<OrderPage> {
                   }
 
                   // Loading state
-                  return Scaffold(
+                  return const Scaffold(
                     body: Center(child: CircularProgressIndicator()),
                   );
                 }),
