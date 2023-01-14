@@ -59,10 +59,12 @@ class _CurrentLocationScreenState extends State<CurrentLocationScreen> {
         long = ds.data()!['longitude'];
         getRegLocation(lat, long);
         widget.onSelected!(Address);
+        print(Address);
         //getUserCoordinates(Address);
         setState(() {});
       }).catchError((e) {});
     } else {
+      print(Address);
       Address = 'Address';
       lat = 6.939052;
       long = 79.893018;

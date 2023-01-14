@@ -1,15 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/screens/orders/order_page.dart';
-import 'package:food_delivery/screens/orders/orders_list.dart';
-import 'package:food_delivery/screens/product_page.dart';
-import 'package:intl/intl.dart';
-
 import '../../constants.dart';
-import '../../services/firebase_services.dart';
-import '../../widgets/custom_action_bar.dart';
-import '../map.dart';
 
 class OrderPlaced extends StatefulWidget {
   final String docId;
@@ -34,14 +25,16 @@ class _OrderPlacedState extends State<OrderPlaced> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: EdgeInsets.only(top: 150.0, bottom: 40),
-            child: Image.asset(
-              "assets/images/5526265.jpg",
-              height: MediaQuery.of(context).size.width / 1.5,
-              width: MediaQuery.of(context).size.width,
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.only(top: 50.0),
+              child: Image.asset(
+                "assets/images/5526265.jpg",
+                height: MediaQuery.of(context).size.width / 1.5,
+                width: MediaQuery.of(context).size.width/1.5,
+              ),
             ),
           ),
           Column(

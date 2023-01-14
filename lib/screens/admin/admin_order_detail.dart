@@ -450,25 +450,28 @@ class _AdminOrderPageState extends State<AdminOrderPage> {
                                             color: Colors.black38,
                                           ),
                                         ),
-                                        Row(
-                                          children: [
-                                            const Icon(Icons.article_outlined),
-                                            const SizedBox(
-                                              width: 10,
-                                            ),
-                                            const Text(
-                                              "Order ID : ",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 14.0),
-                                            ),
-                                            Text(
-                                                widget.productId,
-                                                style: const TextStyle(
-                                                    fontSize: 14.0,
-                                                    color: Colors.black)),
-                                          ],
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            children: [
+                                              const Icon(Icons.article_outlined),
+                                              const SizedBox(
+                                                width: 10,
+                                              ),
+                                              const Text(
+                                                "Order ID : ",
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 14.0),
+                                              ),
+                                              Text(
+                                                  widget.productId,
+                                                  style: const TextStyle(
+                                                      fontSize: 14.0,
+                                                      color: Colors.black)),
+                                            ],
+                                          ),
                                         ),
                                         const Padding(
                                           padding: EdgeInsets.symmetric(
@@ -477,25 +480,28 @@ class _AdminOrderPageState extends State<AdminOrderPage> {
                                             color: Colors.black38,
                                           ),
                                         ),
-                                        Row(
-                                          children: [
-                                            const Icon(Icons.person),
-                                            const SizedBox(
-                                              width: 10,
-                                            ),
-                                            const Text(
-                                              "User ID : ",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.w600,
-                                                  fontSize: 14.0),
-                                            ),
-                                            Text(
-                                                widget.uid,
-                                                style: const TextStyle(
-                                                    fontSize: 14.0,
-                                                    color: Colors.black)),
-                                          ],
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            children: [
+                                              const Icon(Icons.person),
+                                              const SizedBox(
+                                                width: 10,
+                                              ),
+                                              const Text(
+                                                "User ID : ",
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight: FontWeight.w600,
+                                                    fontSize: 14.0),
+                                              ),
+                                              Text(
+                                                  widget.uid,
+                                                  style: const TextStyle(
+                                                      fontSize: 14.0,
+                                                      color: Colors.black)),
+                                            ],
+                                          ),
                                         ),
                                         const Padding(
                                           padding: EdgeInsets.symmetric(

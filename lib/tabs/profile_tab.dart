@@ -26,7 +26,7 @@ class _ProfileTabState extends State<ProfileTab> {
         builder: (context) {
           return AlertDialog(
             title: const Text("Logout"),
-            content: Container(child: Text("Logout your account")),
+            content: Container(child: Text("Logout your account?")),
             actions: [
               TextButton(
                   onPressed: () {
@@ -45,23 +45,24 @@ class _ProfileTabState extends State<ProfileTab> {
   authorizeAccess(BuildContext context) async {
     try {
       await FirebaseFirestore.instance
-        .collection("Users")
-        .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
-        .get()
-        .then((docs) {
-      if (docs.docs[0].exists) {
-        if (docs.docs[0]['role'] == 'admin') {
-          Navigator.of(context).push(MaterialPageRoute(builder:(BuildContext context) => const AdminPage()));
-          print("Authorized");
+          .collection("Users")
+          .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+          .get()
+          .then((docs) {
+        if (docs.docs[0].exists) {
+          if (docs.docs[0]['role'] == 'admin') {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (BuildContext context) => const AdminPage()));
+            print("Authorized");
+          } else {
+            _noItemsAlert();
+            print("Not Authorized");
+          }
         } else {
           _noItemsAlert();
           print("Not Authorized");
         }
-      } else {
-        _noItemsAlert();
-        print("Not Authorized");
-      }
-    });
+      });
     } catch (e) {
       _noItemsAlert();
     }
@@ -77,8 +78,7 @@ class _ProfileTabState extends State<ProfileTab> {
             content: Container(child: Text("User not authorized")),
             actions: [
               TextButton(
-                  onPressed: () => Navigator.pop(context),
-                  child: Text("Ok"))
+                  onPressed: () => Navigator.pop(context), child: Text("Ok"))
             ],
           );
         });
@@ -115,19 +115,11 @@ class _ProfileTabState extends State<ProfileTab> {
               ),
             ),
           ),
-          // GestureDetector(
-          //   child: Padding(
-          //     padding:
-          //         const EdgeInsets.only(left: 24.0, top: 24),
-          //     child: Row(
-          //       children: [
-          //         Icon(Icons.settings),
-          //         Padding(
-          //           padding: const EdgeInsets.only(left: 10.0),
-          //           child: Text("Settings", style: Constants.regularDarkText),
-          //         ),
-          //       ],
-          //     ),
+          // const Padding(
+          //   padding: EdgeInsets.symmetric(
+          //       horizontal: 24.0),
+          //   child: Divider(
+          //     color: Colors.black38, thickness: 0.5,
           //   ),
           // ),
           GestureDetector(
@@ -136,7 +128,7 @@ class _ProfileTabState extends State<ProfileTab> {
             },
             child: Padding(
               padding:
-              const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
               child: Row(
                 children: const [
                   Icon(Icons.admin_panel_settings),
@@ -153,9 +145,7 @@ class _ProfileTabState extends State<ProfileTab> {
               _alertDialogBuilder();
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 24.0,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 24.0),
               child: Row(
                 children: const [
                   Icon(Icons.logout),

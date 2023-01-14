@@ -37,7 +37,6 @@ class ProductList extends StatelessWidget {
         padding: const EdgeInsets.all(4.0),
         child: Container(
           margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-          height: 110,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
             color: Colors.white,
@@ -53,35 +52,30 @@ class ProductList extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.only(right: 5.0),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(6),
-                            bottomLeft: Radius.circular(6)),
-                        child: CachedNetworkImage(
-                          imageUrl: imageUrl,
-                          //placeholder: (context, url) => Center(child: CircularProgressIndicator()),
-                          errorWidget: (context, url, error) => Icon(Icons.error),
-                          width: 130,
-                          height: 130,
-                          fit: BoxFit.cover,
-                        ),
-                        // Image.network(
-                        //   imageUrl ?? '',
-                        //   width: 130,
-                        //   height: 130,
-                        //   fit: BoxFit.cover,
-                        // ),
-                      ),
+              Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 5.0),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(6),
+                        bottomLeft: Radius.circular(6)),
+                    child: CachedNetworkImage(
+                      imageUrl: imageUrl,
+                      //placeholder: (context, url) => Center(child: CircularProgressIndicator()),
+                      errorWidget: (context, url, error) => Icon(Icons.error),
+                      width: 110,
+                      height: 110,
+                      fit: BoxFit.cover,
                     ),
+                    // Image.network(
+                    //   imageUrl ?? '',
+                    //   width: 130,
+                    //   height: 130,
+                    //   fit: BoxFit.cover,
+                    // ),
                   ),
-                ],
+                ),
               ),
               Expanded(
                 flex: 3,
@@ -93,10 +87,10 @@ class ProductList extends StatelessWidget {
                       Text(
                         title,
                         style: TextStyle(
-                            fontSize: 16.0,
+                            fontSize: 15.0,
                             color: Colors.black,
                             fontWeight: FontWeight.w600),
-                        maxLines: 2,
+                        maxLines: 1,
                       ),
                       const Padding(padding: EdgeInsets.only(top: 2.0)),
                       Text(desc,
@@ -105,7 +99,7 @@ class ProductList extends StatelessWidget {
                       const Padding(padding: EdgeInsets.only(top: 10.0)),
                       Text("LKR $price" ?? "Price",
                           style: TextStyle(
-                              fontSize: 14.0,
+                              fontSize: 13.0,
                               color: Colors.black87,
                               fontWeight: FontWeight.w600),
                           maxLines: 1),

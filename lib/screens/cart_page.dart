@@ -244,14 +244,14 @@ class _CartPageState extends State<CartPage> {
                                                 children: [
                                                   Text("${data!['name']}",
                                                       style: TextStyle(
-                                                        fontSize: 18.0,
+                                                        fontSize: 15.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                         color: Colors.black,
                                                       )),
                                                   Text("${data!['size']}",
                                                       style: TextStyle(
-                                                        fontSize: 16.0,
+                                                        fontSize: 15.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                         color: Colors.black,
@@ -266,7 +266,7 @@ class _CartPageState extends State<CartPage> {
                                                           Text(
                                                               "LKR $priceFinal",
                                                               style: TextStyle(
-                                                                fontSize: 16.0,
+                                                                fontSize: 14.0,
                                                                 fontWeight: FontWeight.w600,
                                                                 color: Theme.of(context).colorScheme.secondary,
                                                               )),

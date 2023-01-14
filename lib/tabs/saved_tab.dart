@@ -89,7 +89,7 @@ class SavedTab extends StatelessWidget {
                                             children: [
                                               Text("${_productMap['name']}",
                                                   style: TextStyle(
-                                                    fontSize: 18.0,
+                                                    fontSize: 15.0,
                                                     fontWeight: FontWeight.w600,
                                                     color: Colors.black,
                                                   )),
@@ -99,7 +99,7 @@ class SavedTab extends StatelessWidget {
                                                   child: Text(
                                                       "LKR ${_productMap['price']}",
                                                       style: TextStyle(
-                                                        fontSize: 16.0,
+                                                        fontSize: 15.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                         color: Theme.of(context)
@@ -108,7 +108,7 @@ class SavedTab extends StatelessWidget {
                                                       ))),
                                               Text("${data!['size']}",
                                                   style: TextStyle(
-                                                    fontSize: 16.0,
+                                                    fontSize: 15.0,
                                                     fontWeight: FontWeight.w600,
                                                     color: Colors.black,
                                                   )),

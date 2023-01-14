@@ -150,7 +150,7 @@ class _AddProductState extends State<AddProduct> {
   File? file;
 
   _ChoosePhoto() async {
-    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+    final image = await ImagePicker().pickImage(source: ImageSource.camera);
 
     setState(() {
       file = File(image!.path);

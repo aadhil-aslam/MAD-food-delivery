@@ -121,10 +121,9 @@ class _AdminPageState extends State<AdminPage> {
       backgroundColor: Colors.white,
       body: SafeArea(
           child: Container(
+            height:  MediaQuery.of(context).size.height,
         width: double.infinity,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.fromLTRB(24.0, 30.0, 24.0, 24.0),
@@ -154,300 +153,322 @@ class _AdminPageState extends State<AdminPage> {
               ),
             ),
             Expanded(
-              child: Column(
+              child: ListView(
+                shrinkWrap: true,
                 children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 24.0, right: 10),
-                          child: Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.0),
-                              color: const Color(0xFFF2F2F2),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: const [
-                                      Icon(
-                                        Icons.article,
-                                        size: 26.0,
-                                      ),
-                                      SizedBox(
-                                        width: 15.0,
-                                      ),
-                                      Text(
-                                        "Total Orders",
-                                        style: TextStyle(
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    "$orders Orders",
-                                    style: const TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 24.0, left: 10),
-                          child: Container(
-                            height: 100,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(8.0),
-                              color: const Color(0xFFF2F2F2),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(16.0),
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    children: const [
-                                      Icon(
-                                        Icons.person,
-                                        size: 26.0,
-                                      ),
-                                      SizedBox(
-                                        width: 15.0,
-                                      ),
-                                      Text(
-                                        "Total Users",
-                                        style: TextStyle(
-                                          fontSize: 16.0,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    height: 10.0,
-                                  ),
-                                  Text(
-                                    "$users Users",
-                                    style: const TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24.0, vertical: 20),
-                    child: Container(
-                      height: 100,
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: const Color(0xFFF2F2F2),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Row(
                           children: [
-                            Row(
-                              children: const [
-                                Icon(
-                                  Icons.fastfood,
-                                  size: 26.0,
-                                ),
-                                SizedBox(
-                                  width: 15.0,
-                                ),
-                                Text(
-                                  "Total Products",
-                                  style: TextStyle(
-                                    fontSize: 16.0,
-                                    fontWeight: FontWeight.bold,
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 24.0, right: 10),
+                                child: Container(
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    color: const Color(0xFFF2F2F2),
                                   ),
-                                )
-                              ],
-                            ),
-                            const SizedBox(
-                              height: 10.0,
-                            ),
-                            Text(
-                              "$products Products",
-                              style: const TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 24.0),
-                    child: Container(
-                      width: MediaQuery.of(context).size.width,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8.0),
-                        color: const Color(0xFFF2F2F2),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(12.0),
-                        child: Center(
-                          child: Column(
-                            children: [
-                              const Padding(
-                                padding:
-                                    EdgeInsets.only(bottom: 5.0, top: 5),
-                                child: Text("Orders",
-                                    style: Constants.boldHeading),
-                              ),
-                              Row(
-                                children: [
-                                  Expanded(
-                                    child: Padding(
-                                      padding:
-                                          const EdgeInsets.only(left: 34.0),
-                                      child: SizedBox(
-                                          height: MediaQuery.of(context)
-                                                  .size
-                                                  .height /
-                                              4,
-                                          child: PieChart(
-                                            PieChartData(
-                                              borderData: FlBorderData(
-                                                show: false,
-                                              ),
-                                              sectionsSpace: 0,
-                                              centerSpaceRadius: 0,
-                                              sections: showingSections(
-                                                  accepted,
-                                                  pending,
-                                                  cancelled,
-                                                  completed),
-                                            ),
-                                          )),
-                                    ),
-                                  ),
-                                  Expanded(
-                                      child: Padding(
-                                    padding: const EdgeInsets.only(left: 50.0),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
                                     child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
                                       children: [
-                                        Row(
-                                          children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(2),
-                                                color: const Color(0xff13d38e),
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            children: const [
+                                              Icon(
+                                                Icons.article,
+                                                size: 26.0,
                                               ),
-                                              height: 10,
-                                              width: 10,
-                                            ),
-                                            const Expanded(
-                                                child: Padding(
-                                              padding: EdgeInsets.only(
-                                                  left: 15.0),
-                                              child: Text("Accepted"),
-                                            ))
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 15.0),
-                                          child: Row(
-                                            children: [
-                                              Container(
-                                                  decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            2),
-                                                    color: const Color(0xfff8b250),
-                                                  ),
-                                                  height: 10,
-                                                  width: 10),
-                                              const Expanded(
-                                                  child: Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: 15.0),
-                                                child: Text("Pending"),
-                                              ))
-                                            ],
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 15.0),
-                                          child: Row(
-                                            children: [
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(2),
-                                                  color: Colors.red.shade400,
+                                              SizedBox(
+                                                width: 15.0,
+                                              ),
+                                              Text(
+                                                "Total Orders",
+                                                style: TextStyle(
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.bold,
                                                 ),
-                                                height: 10,
-                                                width: 10,
-                                              ),
-                                              const Expanded(
-                                                  child: Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: 15.0),
-                                                child: Text("Cancelled"),
-                                              ))
+                                              )
                                             ],
                                           ),
                                         ),
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 15.0),
-                                          child: Row(
-                                            children: [
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                  borderRadius:
-                                                      BorderRadius.circular(2),
-                                                  color: const Color(0xff0293ee),
-                                                ),
-                                                height: 10,
-                                                width: 10,
-                                              ),
-                                              const Expanded(
-                                                  child: Padding(
-                                                padding: EdgeInsets.only(
-                                                    left: 15.0),
-                                                child: Text("Completed"),
-                                              ))
-                                            ],
-                                          ),
+                                        const SizedBox(
+                                          height: 10.0,
                                         ),
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Text(
+                                            "$orders Orders",
+                                            style: const TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        )
                                       ],
                                     ),
-                                  )),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Expanded(
+                              child: Padding(
+                                padding: const EdgeInsets.only(right: 24.0, left: 10),
+                                child: Container(
+                                  height: 100,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                    color: const Color(0xFFF2F2F2),
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Row(
+                                            children: const [
+                                              Icon(
+                                                Icons.person,
+                                                size: 26.0,
+                                              ),
+                                              SizedBox(
+                                                width: 15.0,
+                                              ),
+                                              Text(
+                                                "Total Users",
+                                                style: TextStyle(
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        const SizedBox(
+                                          height: 10.0,
+                                        ),
+                                        SingleChildScrollView(
+                                          scrollDirection: Axis.horizontal,
+                                          child: Text(
+                                            "$users Users",
+                                            style: const TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24.0, vertical: 20),
+                          child: Container(
+                            height: 100,
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                              color: const Color(0xFFF2F2F2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: const [
+                                      Icon(
+                                        Icons.fastfood,
+                                        size: 26.0,
+                                      ),
+                                      SizedBox(
+                                        width: 15.0,
+                                      ),
+                                      Text(
+                                        "Total Products",
+                                        style: TextStyle(
+                                          fontSize: 16.0,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                  const SizedBox(
+                                    height: 10.0,
+                                  ),
+                                  SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Text(
+                                      "$products Products",
+                                      style: const TextStyle(
+                                          fontSize: 20, fontWeight: FontWeight.bold),
+                                    ),
+                                  )
                                 ],
                               ),
-                            ],
+                            ),
                           ),
                         ),
-                      ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.0),
+                              color: const Color(0xFFF2F2F2),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Center(
+                                child: Column(
+                                  children: [
+                                    const Padding(
+                                      padding:
+                                          EdgeInsets.only(bottom: 5.0, top: 5),
+                                      child: Text("Orders",
+                                          style: Constants.boldHeading),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Expanded(
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsets.only(left: 34.0),
+                                            child: SizedBox(
+                                                height: MediaQuery.of(context)
+                                                        .size
+                                                        .height /
+                                                    4,
+                                                child: PieChart(
+                                                  PieChartData(
+                                                    borderData: FlBorderData(
+                                                      show: false,
+                                                    ),
+                                                    sectionsSpace: 0,
+                                                    centerSpaceRadius: 0,
+                                                    sections: showingSections(
+                                                        accepted,
+                                                        pending,
+                                                        cancelled,
+                                                        completed),
+                                                  ),
+                                                )),
+                                          ),
+                                        ),
+                                        Expanded(
+                                            child: Padding(
+                                          padding: const EdgeInsets.only(left: 50.0),
+                                          child: Column(
+                                            children: [
+                                              Row(
+                                                children: [
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(2),
+                                                      color: const Color(0xff13d38e),
+                                                    ),
+                                                    height: 10,
+                                                    width: 10,
+                                                  ),
+                                                  const Expanded(
+                                                      child: Padding(
+                                                    padding: EdgeInsets.only(
+                                                        left: 15.0),
+                                                    child: Text("Accepted"),
+                                                  ))
+                                                ],
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.only(top: 15.0),
+                                                child: Row(
+                                                  children: [
+                                                    Container(
+                                                        decoration: BoxDecoration(
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                  2),
+                                                          color: const Color(0xfff8b250),
+                                                        ),
+                                                        height: 10,
+                                                        width: 10),
+                                                    const Expanded(
+                                                        child: Padding(
+                                                      padding: EdgeInsets.only(
+                                                          left: 15.0),
+                                                      child: Text("Pending"),
+                                                    ))
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.only(top: 15.0),
+                                                child: Row(
+                                                  children: [
+                                                    Container(
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius.circular(2),
+                                                        color: Colors.red.shade400,
+                                                      ),
+                                                      height: 10,
+                                                      width: 10,
+                                                    ),
+                                                    const Expanded(
+                                                        child: Padding(
+                                                      padding: EdgeInsets.only(
+                                                          left: 15.0),
+                                                      child: Text("Cancelled"),
+                                                    ))
+                                                  ],
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.only(top: 15.0),
+                                                child: Row(
+                                                  children: [
+                                                    Container(
+                                                      decoration: BoxDecoration(
+                                                        borderRadius:
+                                                            BorderRadius.circular(2),
+                                                        color: const Color(0xff0293ee),
+                                                      ),
+                                                      height: 10,
+                                                      width: 10,
+                                                    ),
+                                                    const Expanded(
+                                                        child: Padding(
+                                                      padding: EdgeInsets.only(
+                                                          left: 15.0),
+                                                      child: Text("Completed"),
+                                                    ))
+                                                  ],
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        )),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ],
@@ -459,7 +480,7 @@ class _AdminPageState extends State<AdminPage> {
                   text: 'Manage Orders',
                   onPressed: () {
                     Navigator.push(context,
-                            MaterialPageRoute(builder: (_) => const AdminOrders()))
+                        MaterialPageRoute(builder: (_) => const AdminOrders()))
                         .then((value) {
                       setState(() {});
                     });
