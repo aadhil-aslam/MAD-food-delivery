@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  int pageIndex = 3;
+  int pageIndex = 0;
 
   final pages = [
     MenuTab(),
