@@ -84,7 +84,7 @@ class _AdminOrdersState extends State<AdminOrders> {
                     padding: const EdgeInsets.only(top: 118.0, bottom: 12.0),
                     children: snapshot.data!.docs.map((document) {
                       Map<String, dynamic> data =
-                      document.data()! as Map<String, dynamic>;
+                          document.data()! as Map<String, dynamic>;
 
                       bool pending = data['status'] == "Order Placed";
 
@@ -96,14 +96,19 @@ class _AdminOrdersState extends State<AdminOrders> {
 
                       return GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=> AdminOrderPage(productId: data!['orderId'], uid: data!['customerId']))).then((value){
-                              setState(() {
-                              });
+                            Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (_) => AdminOrderPage(
+                                            productId: data!['orderId'],
+                                            uid: data!['customerId'])))
+                                .then((value) {
+                              setState(() {});
                             });
                           },
                           child: Padding(
                               padding:
-                              const EdgeInsets.symmetric(horizontal: 15),
+                                  const EdgeInsets.symmetric(horizontal: 15),
                               child: ListTile(
                                 leading: Container(
                                     width: 25,
@@ -130,10 +135,10 @@ class _AdminOrdersState extends State<AdminOrders> {
                                       color: canceled
                                           ? Colors.red
                                           : pending
-                                          ? Colors.grey.shade300
-                                          : delivered
-                                          ? Colors.grey.shade600
-                                          : Colors.green.shade700),
+                                              ? Colors.grey.shade300
+                                              : delivered
+                                                  ? Colors.grey.shade600
+                                                  : Colors.green.shade700),
                                   child: Padding(
                                     padding: const EdgeInsets.symmetric(
                                         horizontal: 15.0, vertical: 5),
@@ -141,7 +146,9 @@ class _AdminOrdersState extends State<AdminOrders> {
                                         style: TextStyle(
                                           fontSize: 14.0,
                                           fontWeight: FontWeight.w600,
-                                          color: pending ? Colors.black : Colors.white,
+                                          color: pending
+                                              ? Colors.black
+                                              : Colors.white,
                                         )),
                                   ),
                                 ),

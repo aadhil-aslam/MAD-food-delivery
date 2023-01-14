@@ -51,11 +51,12 @@ class _HomeAppBarState extends State<HomeAppBar> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      //CurrentLocationScreen()
-                                      CurrentLocationScreen(
-                                        hasBackArrow: true,
-                                      )));
+                                  builder: (_) => CurrentLocationScreen(
+                                    hasBackArrow: true,
+                                  )))
+                              .then((value) {
+                            setState(() {});
+                          });
                         },
                         child: SingleChildScrollView(
                           scrollDirection: Axis.horizontal,
