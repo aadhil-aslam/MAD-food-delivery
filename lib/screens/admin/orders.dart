@@ -155,31 +155,34 @@ class _AdminOrdersState extends State<AdminOrders> {
                   body: Center(child: CircularProgressIndicator()),
                 );
               }),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(24.0, 54.0, 24.0, 10.0),
-            child: Row(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                      width: 42.0,
-                      height: 42.0,
-                      decoration: BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: BorderRadius.circular(8.0)),
-                      child: const Icon(
-                        Icons.arrow_back_ios_new,
-                        color: Colors.white,
-                        size: 18,
-                      )),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 20.0),
-                  child: Text("Orders", style: Constants.boldHeading),
-                ),
-              ],
+          Container(
+            color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(24.0, 54.0, 24.0, 10.0),
+              child: Row(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                        width: 42.0,
+                        height: 42.0,
+                        decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(8.0)),
+                        child: const Icon(
+                          Icons.arrow_back_ios_new,
+                          color: Colors.white,
+                          size: 18,
+                        )),
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: Text("Orders", style: Constants.boldHeading),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

@@ -63,8 +63,6 @@ class _ProductPageState extends State<ProductPage> {
       "image": widget.imageUrl,
       "quantity": 1,
     });
-    // await _firebaseServices.usersRef
-    //     .doc(_firebaseServices.getUserId()).set({"cartTotal" :0});
   }
 
   Future _addToCart() {

@@ -1,14 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:food_delivery/screens/landing_page.dart';
 import 'package:food_delivery/screens/orders/orders_list.dart';
-
 import '../constants.dart';
 import '../screens/admin/admin.dart';
-import '../screens/product_page.dart';
 import '../services/firebase_services.dart';
-import '../widgets/custom_action_bar.dart';
 import '../widgets/home_action_bar.dart';
 
 class ProfileTab extends StatefulWidget {
@@ -55,20 +51,20 @@ class _ProfileTabState extends State<ProfileTab> {
                 builder: (BuildContext context) => const AdminPage()));
             print("Authorized");
           } else {
-            _noItemsAlert();
+            _noAuthAlert();
             print("Not Authorized");
           }
         } else {
-          _noItemsAlert();
+          _noAuthAlert();
           print("Not Authorized");
         }
       });
     } catch (e) {
-      _noItemsAlert();
+      _noAuthAlert();
     }
   }
 
-  Future _noItemsAlert() async {
+  Future _noAuthAlert() async {
     return showDialog(
         context: context,
         barrierDismissible: false,
