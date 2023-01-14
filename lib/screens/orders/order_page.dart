@@ -71,11 +71,6 @@ class _OrderPageState extends State<OrderPage> {
                       }),
                 ]),
           ),
-          // CustomActionBar(
-          //   hasTitle: false,
-          //   hasCart: false,
-          //   hasBackArrow: true,
-          // ),
           Padding(
             padding: const EdgeInsets.fromLTRB(24.0, 0.0, 24.0, 10.0),
             child: FutureBuilder<DocumentSnapshot>(
