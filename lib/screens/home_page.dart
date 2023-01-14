@@ -85,34 +85,6 @@ class _HomePageState extends State<HomePage> {
             showSelectedLabels: false,
             showUnselectedLabels: false,
           ),
-
-      //     Column(
-      //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      //       children: [
-      //         Expanded(
-      //         child: PageView(
-      //       controller: _tabsPageController,
-      //       onPageChanged: (num) {
-      //         setState(() {
-      //           _selectedTab = num;
-      //         });
-      //       },
-      //       children: [
-      //         HomeTab(),
-      //         SearchTab(),
-      //         SavedTab(),
-      //       ],
-      //     )),
-      //     BottomTabs(
-      //       selectedTab: _selectedTab,
-      //       tabPressed: (num) {
-      //         _tabsPageController.animateToPage(num,
-      //             duration: Duration(milliseconds: 300),
-      //             curve: Curves.easeOutCubic);
-      //       },
-      //     )
-      //   ],
-      // ),
     );
   }
 }

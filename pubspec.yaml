@@ -32,40 +32,29 @@ dependencies:
   flutter:
     sdk: flutter
 
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+
+  #firebase
   firebase_core: ^2.4.0
-  google_fonts: ^3.0.1
   firebase_auth: ^4.2.3
+  cloud_firestore: ^4.3.0
+  firebase_storage: ^11.0.10
+
+  google_fonts: ^3.0.1
   ionicons: ^0.2.1
   animations: ^2.0.7
-  cloud_firestore: ^4.3.0
   badges: ^2.0.3
-  carousel_slider: ^4.1.1
-  firebase_storage: ^11.0.10
   fl_chart: ^0.55.2
-  google_maps_flutter: ^2.2.2
-  geolocator: ^9.0.2
 
-# open street map
+  #map
+  geolocator: ^9.0.2
   flutter_map: ^3.1.0
-  tuple: ^2.0.1
-  positioned_tap_detector_2: ^1.0.4
-  transparent_image: ^2.0.0
-  async: ^2.9.0
-  flutter_image: ^4.1.4
-  vector_math: ^2.1.2
-  proj4dart: ^2.1.0
-  meta: ^1.8.0
-  collection: ^1.16.0
   geocoding:
   latlong2:
+
   intl: ^0.17.0
   cached_network_image: ^3.2.3
   image_picker: ^0.8.6
-
 
 
 dev_dependencies:

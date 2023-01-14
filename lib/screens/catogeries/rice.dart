@@ -1,10 +1,6 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-
-import '../../widgets/product_card.dart';
 import '../../widgets/product_list.dart';
-import '../product_page.dart';
 
 class Rice extends StatefulWidget {
   const Rice({Key? key}) : super(key: key);
