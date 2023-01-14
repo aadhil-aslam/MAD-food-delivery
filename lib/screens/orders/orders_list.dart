@@ -46,8 +46,12 @@ class _OrdersListState extends State<OrdersList> {
 
                 // Collection data ready to display
                 if (snapshot.connectionState == ConnectionState.done) {
+
+                  List documents = snapshot.data!.docs;
+                  int totalItems = documents.length;
+
                   // Display the data inside a list view
-                  return ListView(
+                  return totalItems != 0 ? ListView(
                     padding: EdgeInsets.only(top: 118.0, bottom: 12.0),
                     children: snapshot.data!.docs.map((document) {
                       Map<String, dynamic> data =
@@ -117,7 +121,7 @@ class _OrdersListState extends State<OrdersList> {
                                 //     )),
                               )));
                     }).toList(),
-                  );
+                  ) : Center(child: Text("No Orders To Display", style: Constants.regularDarkText,),);
                 }
 
                 // Loading state

@@ -92,13 +92,6 @@ class CustomActionBar extends StatelessWidget {
                       List _documents = snapshot.data!.docs;
                       _totalItems = _documents.length;
 
-                      // for (var result in snapshot.data!.docs) {
-                      //   _totalItems = _totalItems + result.data()['quantity'];
-                      //   totalPrice = _totalItems;
-                      //
-                      // }
-                      // print('total price: $totalPrice');
-
                     }
                     return Badge(
                       //toAnimate: false,

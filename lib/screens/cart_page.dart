@@ -184,8 +184,12 @@ class _CartPageState extends State<CartPage> {
 
                 // Collection data ready to display
                 if (snapshot.connectionState == ConnectionState.active) {
+
+                  List documents = snapshot.data!.docs;
+                  int totalItems = documents.length;
+
                   // Display the data inside a list view
-                  return Column(
+                  return totalItems != 0 ? Column(
                     children: [
                       Expanded(
                         child: ListView(
@@ -408,7 +412,7 @@ class _CartPageState extends State<CartPage> {
                         ),
                       ),
                     ],
-                  );
+                  ) : Center(child: Text("No Items In Cart", style: Constants.regularDarkText,));
                 }
 
                 // Loading state
