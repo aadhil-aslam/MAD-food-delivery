@@ -20,7 +20,7 @@ class _PastasState extends State<Pastas> {
   Widget build(BuildContext context) {
     return FutureBuilder<QuerySnapshot>(
         future: _productRef
-            .where('type', isEqualTo: 'Pasta')
+            .where('type', isEqualTo: 'Pastas')
             .get(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {

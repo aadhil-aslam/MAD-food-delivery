@@ -17,7 +17,7 @@ class _PizzasState extends State<Pizzas> {
   Widget build(BuildContext context) {
     return FutureBuilder<QuerySnapshot>(
         future: _productRef
-            .where('type', isEqualTo: 'pizza')
+            .where('type', isEqualTo: 'Pizzas')
             .get(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
